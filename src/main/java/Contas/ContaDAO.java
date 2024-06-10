@@ -45,4 +45,18 @@ public class ContaDAO {
             stmt.executeUpdate();
         }
     }
+    
+    public boolean existeConta(String contaNrConta) throws SQLException {
+        String query = "SELECT COUNT(*) FROM CONTA WHERE NR_CONTA = ?";
+        try (Connection conn = new Conexao().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, contaNrConta);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1) > 0;
+                }
+            }
+        }
+        return false;
+    }
 }

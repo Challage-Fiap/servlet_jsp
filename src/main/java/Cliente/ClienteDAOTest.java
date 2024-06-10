@@ -5,6 +5,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ClienteDAOTest {
+    private static Scanner scanner;
+
+    public static void init(Scanner sc) {
+        scanner = sc;
+    }
+
     public static void testGetAllClientes() {
         ClienteDAO clienteDAO = new ClienteDAO();
 
@@ -29,8 +35,6 @@ public class ClienteDAOTest {
     }
 
     public static void testInsertCliente() {
-    	Scanner scanner = new Scanner(System.in);
-
         System.out.println("Você deseja inserir um novo cliente? (sim/não)");
         String resposta = scanner.nextLine().trim().toLowerCase();
 
@@ -40,7 +44,7 @@ public class ClienteDAOTest {
 
             System.out.println("Digite o ID do cliente:");
             int idCliente = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer
+            scanner.nextLine();
 
             System.out.println("Digite o nome do cliente:");
             String nome = scanner.nextLine();
@@ -65,12 +69,9 @@ public class ClienteDAOTest {
                 System.out.println("Cliente inserido com sucesso.");
             } catch (SQLException e) {
                 System.out.println("Falha ao inserir cliente: " + e.getMessage());
-            } finally {
-                scanner.close();
             }
         } else {
             System.out.println("Operação cancelada.");
-            scanner.close();
         }
     }
 }
