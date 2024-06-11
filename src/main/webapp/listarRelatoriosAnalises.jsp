@@ -34,5 +34,7 @@
     <form action="adicionarRelatorioAnalise.jsp">
         <input type="submit" value="Adicionar Relatório de Análise">
     </form>
+    <br>
+	<a href="home.jsp">Voltar para Home</a>
 </body>
 </html>

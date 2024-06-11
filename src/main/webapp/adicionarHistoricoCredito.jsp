@@ -18,5 +18,7 @@
     <form action="historicoCredito">
         <input type="submit" value="Voltar para Listagem de Histórico de Crédito">
     </form>
+    <br>
+	<a href="home.jsp">Voltar para Home</a>
 </body>
 </html>

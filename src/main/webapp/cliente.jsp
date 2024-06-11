@@ -34,5 +34,7 @@
             <% } %>
         </tbody>
     </table>
+    <br>
+    <a href="home.jsp">Voltar para Home</a>
 </body>
 </html>

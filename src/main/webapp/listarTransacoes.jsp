@@ -36,5 +36,7 @@
     <form action="adicionarTransacao.jsp">
         <input type="submit" value="Adicionar Transação">
     </form>
+    <br>
+	<a href="home.jsp">Voltar para Home</a>
 </body>
 </html>

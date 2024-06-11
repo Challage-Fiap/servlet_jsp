@@ -15,5 +15,7 @@
         ID do Cliente: <input type="text" name="idCliente"><br>
         <input type="submit" value="Adicionar">
     </form>
+    <br>
+	<a href="home.jsp">Voltar para Home</a>
 </body>
 </html>

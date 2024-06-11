@@ -25,5 +25,7 @@
         
         <input type="submit" value="Incluir">
     </form>
+    <br>
+	<a href="home.jsp">Voltar para Home</a>
 </body>
 </html>

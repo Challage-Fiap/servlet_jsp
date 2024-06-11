@@ -10,10 +10,11 @@
     <h1>Bem-vindo ao Sistema de Gestão</h1>
     <ul>
         <li><a href="cliente">Clientes</a></li>
-        <li><a href="contas">Contas</a></li>
+        <li><a href="adicionarConta">Contas</a></li>
         <li><a href="historicoCredito">Histórico de Crédito</a></li>
         <li><a href="relatoriosAnalises">Relatórios de Análises</a></li>
         <li><a href="transacoes">Transações</a></li>
     </ul>
+    <br>
 </body>
 </html>

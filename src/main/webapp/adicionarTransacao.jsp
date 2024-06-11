@@ -19,5 +19,7 @@
     <form action="transacoes">
         <input type="submit" value="Voltar para Listagem de Transações">
     </form>
+    <br>
+	<a href="home.jsp">Voltar para Home</a>
 </body>
 </html>

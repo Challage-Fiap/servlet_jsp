@@ -34,5 +34,7 @@
     <form action="adicionarHistoricoCredito.jsp">
         <input type="submit" value="Adicionar Histórico de Crédito">
     </form>
+    <br>
+	<a href="home.jsp">Voltar para Home</a>
 </body>
 </html>

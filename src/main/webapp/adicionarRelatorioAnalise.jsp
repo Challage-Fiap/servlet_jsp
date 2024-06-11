@@ -18,5 +18,7 @@
     <form action="relatoriosAnalises">
         <input type="submit" value="Voltar para Listagem de Relatórios de Análises">
     </form>
+    <br>
+    <a href="home.jsp">Voltar para Home</a>
 </body>
 </html>
