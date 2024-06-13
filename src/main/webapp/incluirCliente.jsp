@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page session="false" %>
+<%
+    HttpSession session = request.getSession(false);
+    if (session == null || session.getAttribute("username") == null) {
+        response.sendRedirect("error.jsp");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>
