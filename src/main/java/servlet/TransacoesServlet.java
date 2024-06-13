@@ -24,6 +24,7 @@ public class TransacoesServlet extends HttpServlet {
             request.getRequestDispatcher("/listarTransacoes.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erro ao listar transações");
         }
     }
 
@@ -31,16 +32,20 @@ public class TransacoesServlet extends HttpServlet {
         TransacaoDAO transacaoDAO = new TransacaoDAO();
         Transacao transacao = new Transacao();
 
-        transacao.setIdTransacao(Integer.parseInt(request.getParameter("idTransacao")));
-        transacao.setData(Date.valueOf(request.getParameter("data")));
-        transacao.setValor(Double.parseDouble(request.getParameter("valor")));
-        transacao.setContaNrConta(request.getParameter("contaNrConta"));
-
         try {
+            transacao.setIdTransacao(Integer.parseInt(request.getParameter("idTransacao")));
+            transacao.setData(Date.valueOf(request.getParameter("data")));
+            transacao.setValor(Double.parseDouble(request.getParameter("valor")));
+            transacao.setContaNrConta(request.getParameter("contaNrConta"));
+
             transacaoDAO.insertTransacao(transacao);
             response.sendRedirect(request.getContextPath() + "/transacoes");
         } catch (SQLException e) {
             e.printStackTrace();
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Erro ao adicionar transação: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parâmetros inválidos");
         }
     }
 }
