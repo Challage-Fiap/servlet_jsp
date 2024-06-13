@@ -20,18 +20,26 @@
             </tr>
         </thead>
         <tbody>
-            <% 
-            List<Contas.Conta> contas = (List<Contas.Conta>) request.getAttribute("contas");
-            for (Contas.Conta conta : contas) { 
-            %>
-            <tr>
-                <td><%= conta.getNrConta() %></td>
-                <td><%= conta.getTpConta() %></td>
-                <td><%= conta.getSaldo() %></td>
-                <td><%= conta.getIdCliente() %></td>
-            </tr>
-            <% } %>
-        </tbody>
+		    <% 
+		    List<Contas.Conta> contas = (List<Contas.Conta>) request.getAttribute("contas");
+		    if (contas != null) {
+		        for (Contas.Conta conta : contas) { 
+		    %>
+		    <tr>
+		        <td><%= conta.getNrConta() %></td>
+		        <td><%= conta.getTpConta() %></td>
+		        <td><%= conta.getSaldo() %></td>
+		        <td><%= conta.getIdCliente() %></td>
+		    </tr>
+		    <% 
+		        }
+		    } else { 
+		    %>
+		    <tr>
+		        <td colspan="4">Nenhuma conta encontrada</td>
+		    </tr>
+		    <% } %>
+		</tbody>
     </table>
     <br>
 	<a href="home.jsp">Voltar para Home</a>
